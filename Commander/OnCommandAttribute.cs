@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Commander
@@ -10,7 +11,7 @@ namespace Commander
     {
         private readonly string _commandName;
 
-        public OnCommandAttribute(string commandName)
+        public OnCommandAttribute([CallerMemberName]string commandName = null)
         {
             if (commandName == null)
             {
